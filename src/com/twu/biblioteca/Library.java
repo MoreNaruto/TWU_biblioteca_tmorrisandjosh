@@ -4,26 +4,20 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by ashleycampo on 6/17/14.
  */
 public class Library {
 
-    private ArrayList<Book> books = new ArrayList<Book>();
+    private List<Book> books;
     private PrintStream out;
 
 
-    public Library(PrintStream out) {
+    public Library(PrintStream out, List<Book> books) {
         this.out = out;
-        books.add(new Book("Head First Java", "Bill", "1924", false));
-        books.add(new Book("Game of Thrones", "J.R.R. Martin", "1992", false));
-
-
+        this.books = books;
     }
 
     public void checkoutBook(BufferedReader reader) throws IOException {

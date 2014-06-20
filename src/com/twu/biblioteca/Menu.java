@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.util.Hashtable;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by thomasmorris on 6/18/14.
@@ -12,21 +14,21 @@ import java.util.Hashtable;
 public class Menu {
 
     private boolean shouldQuit = false;
-    private Hashtable<String, Command> methodMap;// = new Hashtable<String, Command>();
+    private Map<String, Command> methodMap;
     private PrintStream out;
     private Library library;
     private BufferedReader reader;
 
-    public Menu(Hashtable<String, Command> menuMap, PrintStream out, BufferedReader r){
+    public Menu(Map<String, Command> menuMap, PrintStream out, BufferedReader reader, List<Book> books){
 
         this.out = out;
 
-        library = new Library(this.out);
-        reader = r;
+        library = new Library(this.out, books);
+        this.reader = reader;
         this.methodMap = menuMap;
         methodMap.put("List Books", new ListBooksCommand(library, this.out));
-        methodMap.put("Checkout Book", new CheckOutCommand(reader,library, this.out));
-        methodMap.put("Return Book", new ReturnBookCommand(reader, library, this.out));
+        methodMap.put("Checkout Book", new CheckOutCommand(this.reader,library, this.out));
+        methodMap.put("Return Book", new ReturnBookCommand(this.reader, library, this.out));
 
 
     }
