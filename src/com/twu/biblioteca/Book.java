@@ -9,11 +9,13 @@ public class Book {
     String author;
     String year;
     String title;
+    boolean checkout;
 
-    public Book(String t, String a, String y) {
+    public Book(String t, String a, String y, boolean checkout) {
         author = a;
         year = y;
         title = t;
+        this.checkout = checkout;
     }
 
     public String toString() {
@@ -52,3 +54,4 @@ public class Book {
         return author;
     }
 }
+

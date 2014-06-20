@@ -92,4 +92,19 @@ public class BibliotecaTests {
 
     }
 
+    @Test
+    public void unsuccessfulCheckOutBook() throws IOException {
+        String book = "Head First Java";
+//        List<Book> falseBook = new ArrayList<Book>();
+//        falseBook.add(new Book("Yellow Mellow", "Bob", "1954"));
+//        falseBook.add(new Book("Fly Monkey", "Tim", "1976"));
+
+        library.checkoutBook(reader);
+        when(reader.readLine()).thenReturn(book);
+        library.checkoutBook(reader);
+        when(reader.readLine()).thenReturn(book);
+        verify(mockStream).println("".concat(book).concat(" is not available"));
+
+    }
+
 }

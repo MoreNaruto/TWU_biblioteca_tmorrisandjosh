@@ -20,8 +20,8 @@ public class Library {
 
     public Library(PrintStream out) {
         this.out = out;
-        books.add(new Book("Head First Java", "Bill", "1924"));
-        books.add(new Book("Game of Thrones", "J.R.R. Martin", "1992"));
+        books.add(new Book("Head First Java", "Bill", "1924", false));
+        books.add(new Book("Game of Thrones", "J.R.R. Martin", "1992", false));
 
 
     }
@@ -30,15 +30,31 @@ public class Library {
         String bookTitle = reader.readLine();
         for (Book book: books){
             if(book.getBook(bookTitle) != null){
-                books.remove(book);
+                if (book.checkout) {
+                    out.println("".concat(bookTitle).concat(" is not available"));
+                } else {
+                    book.checkout = true;
+                    out.println("Thank you! Enjoy ".concat(bookTitle));
+                }
             }
         }
+    }
 
-
+    public void returnBook(BufferedReader reader) throws IOException {
+        String bookTitle = reader.readLine();
+        for (Book book: books){
+            if(book.getBook(bookTitle) != null){
+                book.checkout = false;
+                out.println("Thank you for returning: ".concat(bookTitle));
+            }
+        }
     }
     public void listBooks() {
         for(Book b : books) {
-            b.print(out);
+            if(b.checkout == false) {
+
+                b.print(out);
+            }
         }
     }
 

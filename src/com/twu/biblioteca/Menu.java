@@ -26,6 +26,7 @@ public class Menu {
         this.methodMap = menuMap;
         methodMap.put("List Books", new ListBooksCommand(library, this.out));
         methodMap.put("Checkout Book", new CheckOutCommand(reader,library, this.out));
+        methodMap.put("Return Book", new ReturnBookCommand(reader, library, this.out));
 
 
     }
