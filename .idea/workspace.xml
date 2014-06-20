@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="88a672e5-9e87-44de-9c4f-ac3b5f0c5a53" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Library.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Library.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Menu.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Menu.java" />
-    </list>
+    <list default="true" id="88a672e5-9e87-44de-9c4f-ac3b5f0c5a53" name="Default" comment="" />
     <ignored path="TWU_biblioteca_tmorrisandjosh.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -667,12 +663,12 @@
       <updated>1403189212391</updated>
       <workItem from="1403189215494" duration="3498000" />
       <workItem from="1403273255854" duration="263000" />
-      <workItem from="1403273530043" duration="11494000" />
+      <workItem from="1403273530043" duration="11698000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15255000" />
+    <option name="totallyTimeSpent" value="15459000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1375" height="790" extended-state="0" />
