@@ -10,14 +10,14 @@ import java.io.PrintStream;
 public class CheckOutCommand implements Command {
 
     private Library library;
-    private PrintStream out;
     private BufferedReader reader;
 
-    public CheckOutCommand(BufferedReader r, Library l, PrintStream out){
-        this.library = l;
-        this.reader = r;
-        this.out = out;
-    }
+    public CheckOutCommand(BufferedReader reader
+            , Library library){
+        this.library = library;
+        this.reader = reader;
+;    }
+
     @Override
     public void execute() {
 

@@ -10,14 +10,12 @@ import java.io.PrintStream;
 public class ReturnBookCommand implements Command {
 
     private Library library;
-    private PrintStream out;
     private BufferedReader reader;
 
-    public ReturnBookCommand(BufferedReader reader, Library library, PrintStream out) {
+    public ReturnBookCommand(BufferedReader reader, Library library) {
 
         this.reader = reader;
         this.library = library;
-        this.out = out;
     }
 
     @Override

@@ -8,11 +8,10 @@ import java.io.PrintStream;
 public class ListBooksCommand implements  Command{
 
     private Library library;
-    private PrintStream out;
 
-    public ListBooksCommand(Library l, PrintStream out){
-        this.library = l;
-        this.out = out;
+    public ListBooksCommand(Library library){
+        this.library = library;
+
     }
 
     @Override

@@ -101,4 +101,13 @@ public class BibliotecaTests {
 
     }
 
+    @Test
+    public void unsuccessfulReturnBook() throws IOException {
+        String book = "Game of Thrones";
+        when(reader.readLine()).thenReturn(book);
+        library.returnBook(reader);
+        verify(mockStream).println("That is not a valid book to return");
+
+    }
+
 }
