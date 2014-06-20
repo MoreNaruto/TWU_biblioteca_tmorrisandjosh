@@ -30,7 +30,6 @@ public class Menu {
         methodMap.put("Checkout Book", new CheckOutCommand(this.reader,library, this.out));
         methodMap.put("Return Book", new ReturnBookCommand(this.reader, library, this.out));
 
-
     }
 
     public void displayMenu() {

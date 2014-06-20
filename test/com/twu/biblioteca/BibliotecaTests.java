@@ -87,17 +87,16 @@ public class BibliotecaTests {
         library.checkoutBook(reader);
         verify(mockStream).println("Thank you! Enjoy ".concat(book));
         library.checkoutBook(reader);
-        verify(mockStream).println("".concat(book).concat(" is not available"));
+        verify(mockStream).println("That book is not available");
 
     }
 
     @Test
     public void returnBook() throws IOException {
         String book = "Game of Thrones";
+        when(reader.readLine()).thenReturn(book);
         library.checkoutBook(reader);
-        when(reader.readLine()).thenReturn(book);
         library.returnBook(reader);
-        when(reader.readLine()).thenReturn(book);
         verify(mockStream).println("Thank you for returning: ".concat(book));
 
     }
