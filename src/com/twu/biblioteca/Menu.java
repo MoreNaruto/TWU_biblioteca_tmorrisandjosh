@@ -33,16 +33,23 @@ public class Menu {
     }
 
     public void displayMenu() {
+        out.println("Menu options");
+        out.println("------------ \n");
+
         for (String option : methodMap.keySet()) {
             out.println(option);
         }
+        out.print("\nChoose an option: ");
     }
+
 
     public void startTakingCommands() throws IOException {
         String input;
 
+        displayWelcomeMessage();
 
         while (!shouldQuit()) {
+            displayMenu();
             input = reader.readLine();
             if (input.equals("Quit")){
                 shouldQuit = true;
@@ -51,13 +58,14 @@ public class Menu {
                 methodMap.get(input).execute();
             }
             else {
-                out.println("Select a valid option!");
+                out.println("Select a valid option!\n");
+
             }
         }
     }
 
     public void displayWelcomeMessage() {
-        out.println("Welcome to Biblioteca!");
+        out.println("Welcome to Biblioteca!\n");
     }
 
     public boolean shouldQuit(){

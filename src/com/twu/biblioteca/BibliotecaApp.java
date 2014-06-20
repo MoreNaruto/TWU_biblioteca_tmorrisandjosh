@@ -15,7 +15,6 @@ public class BibliotecaApp {
 
         Menu menu = new Menu(commands, System.out, new BufferedReader(new InputStreamReader(System.in)), books);
 
-        menu.displayMenu();
         menu.startTakingCommands();
 
     }

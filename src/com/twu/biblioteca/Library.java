@@ -21,26 +21,34 @@ public class Library {
     }
 
     public void checkoutBook(BufferedReader reader) throws IOException {
+        out.println();
+        out.print("Enter a book title that you would like to checkout: ");
         String bookTitle = reader.readLine();
         Book book = findBook(bookTitle);
 
         if (book == null || book.checkout) {
             out.println("That book is not available");
+            out.println();
         } else {
             book.checkout = true;
             out.println("Thank you! Enjoy ".concat(bookTitle));
+            out.println();
         }
 
     }
 
     public void returnBook(BufferedReader reader) throws IOException {
+        out.println();
+        out.print("\nEnter the title of the book you would like to return: ");
         String bookTitle = reader.readLine();
         Book book = findBook(bookTitle);
         if(book == null || !book.checkout){
             out.println("That is not a valid book to return");
+            out.println();
         } else {
             book.checkout = false;
             out.println("Thank you for returning: ".concat(bookTitle));
+            out.println();
         }
     }
 
@@ -54,11 +62,13 @@ public class Library {
     }
 
     public void listBooks() {
+        out.println();
         for(Book b : books) {
             if(b.checkout == false) {
                 b.print(out);
             }
         }
+        out.println();
     }
 
 }
