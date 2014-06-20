@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.PrintStream;
 
 /**
@@ -21,6 +22,10 @@ public class ReturnBookCommand implements Command {
 
     @Override
     public void execute() {
-
+        try {
+            library.returnBook(this.reader);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

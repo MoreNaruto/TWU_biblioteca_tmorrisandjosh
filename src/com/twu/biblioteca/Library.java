@@ -44,6 +44,9 @@ public class Library {
         String bookTitle = reader.readLine();
         for (Book book: books){
             if(book.getBook(bookTitle) != null){
+                if (!book.checkout){
+                    out.println(bookTitle.concat(" is already in the library"));
+                }
                 book.checkout = false;
                 out.println("Thank you for returning: ".concat(bookTitle));
             }
